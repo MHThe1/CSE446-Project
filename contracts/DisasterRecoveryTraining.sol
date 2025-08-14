@@ -30,20 +30,20 @@ contract DisasterRecoveryTraining {
     }
     
     struct TrainingSlot {
-        uint256 slotId;  // 0-47 representing 30-min slots in a day
+        uint256 slotId;
         uint256 trainerId;
         uint256 participantId;
         bool isBooked;
     }
-    uint256 private constant TOTAL_SLOTS_PER_DAY = 48; // 24 hours * 2 slots per hour
-    uint256 private constant BOOKING_FEE = 1 ether; // Fixed booking fee
-    uint256 private constant INITIAL_PARTICIPANT_BALANCE = 10 ether; // Initial balance for participants
+    uint256 private constant TOTAL_SLOTS_PER_DAY = 48;
+    uint256 private constant BOOKING_FEE = 1 ether;
+    uint256 private constant INITIAL_PARTICIPANT_BALANCE = 10 ether;
     mapping(uint256 => Admin) private admins;
     mapping(address => bool) private isAdmin;
     mapping(uint256 => Trainer) private trainers;
     mapping(uint256 => Participant) private participants;
-    mapping(uint256 => mapping(uint256 => TrainingSlot)) private trainerSlots; // trainerId => slotId => TrainingSlot
-    uint256[] private adminIds; // Array to store all admin IDs for random selection
+    mapping(uint256 => mapping(uint256 => TrainingSlot)) private trainerSlots;
+    uint256[] private adminIds;
     
     modifier onlyAdmin() {
         require(isAdmin[msg.sender], "Only admin can perform this action");
@@ -136,7 +136,7 @@ contract DisasterRecoveryTraining {
         for (uint256 i = 0; i < totalAdmins; i++) {
             uint256 adminId = adminIds[i];
             adminIdList[i] = adminId;
-            balanceList[i] = admins[adminId].balance / 1 ether; // Convert wei to ether
+            balanceList[i] = admins[adminId].balance / 1 ether;
         }
         
         return (adminIdList, balanceList);
