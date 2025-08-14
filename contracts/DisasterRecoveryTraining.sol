@@ -49,9 +49,6 @@ contract DisasterRecoveryTraining {
         require(isAdmin[msg.sender], "Only admin can perform this action");
         _;
     }
-
-    constructor() {
-    }
     
     function registerAdmin(uint256 id, string memory name, uint256 age) external returns (uint256) {
         require(age > 0, "Invalid age");

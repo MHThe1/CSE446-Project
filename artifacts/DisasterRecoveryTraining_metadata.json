@@ -6,11 +6,6 @@
 	"output": {
 		"abi": [
 			{
-				"inputs": [],
-				"stateMutability": "nonpayable",
-				"type": "constructor"
-			},
-			{
 				"inputs": [
 					{
 						"internalType": "uint256",
@@ -299,11 +294,11 @@
 	},
 	"sources": {
 		"contracts/DisasterRecoveryTraining.sol": {
-			"keccak256": "0xe77e31bccd28e25d9185f90b2e318aae266468677dd710aee66132f9073cb6c2",
+			"keccak256": "0x5ddb648d5acfc1a4e83517d029b1550efd61e1998cb2d3ca4e10e0b68445a217",
 			"license": "UNLICENSED",
 			"urls": [
-				"bzz-raw://b74777b7041ede3d7131429e2a7696c6f0466452deb97fd1f423857bcca5da85",
-				"dweb:/ipfs/QmQPzjqdVmzGkxURvSvmi8x9VtZg1UvjnbecJ449riENsy"
+				"bzz-raw://0ef228a3b1e8b4ee258e9bcd75725044ef51de0cd028b028c2ae799ec9e521af",
+				"dweb:/ipfs/QmeLL2sgXCi6F63wgX38PBygqYoMVzrd5EgywwWoW8Bnt2"
 			]
 		}
 	},
