@@ -39,11 +39,17 @@ contract DisasterRecoveryTraining {
     uint256 private constant BOOKING_FEE = 1 ether; // Fixed booking fee
     uint256 private constant INITIAL_PARTICIPANT_BALANCE = 10 ether; // Initial balance for participants
     mapping(uint256 => Admin) private admins;
+    mapping(address => bool) private isAdmin;
     mapping(uint256 => Trainer) private trainers;
     mapping(uint256 => Participant) private participants;
     mapping(uint256 => mapping(uint256 => TrainingSlot)) private trainerSlots; // trainerId => slotId => TrainingSlot
     uint256[] private adminIds; // Array to store all admin IDs for random selection
     
+    modifier onlyAdmin() {
+        require(isAdmin[msg.sender], "Only admin can perform this action");
+        _;
+    }
+
     constructor() {
     }
     
@@ -54,6 +60,7 @@ contract DisasterRecoveryTraining {
         
         admins[id] = Admin(id, name, age, 0);
         adminIds.push(id);
+        isAdmin[msg.sender] = true;
         return id;
     }
     
@@ -93,7 +100,7 @@ contract DisasterRecoveryTraining {
         return id;
     }
     
-    function updateParticipantData(uint256 participantId, uint256 newTrainingInterest, bool has_completed_training) external {
+    function updateParticipantData(uint256 participantId, uint256 newTrainingInterest, bool has_completed_training) external onlyAdmin {
         require(participants[participantId].id != 0, "Participant not found");
         require(newTrainingInterest <= 2, "Invalid training interest");
         

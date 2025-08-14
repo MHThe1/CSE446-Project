@@ -299,11 +299,11 @@
 	},
 	"sources": {
 		"contracts/DisasterRecoveryTraining.sol": {
-			"keccak256": "0x451dc8d3827c64ef253ad6e7a8d6080c3c79210a459abdc5cd32b6ed2ea2e8ee",
+			"keccak256": "0xe77e31bccd28e25d9185f90b2e318aae266468677dd710aee66132f9073cb6c2",
 			"license": "UNLICENSED",
 			"urls": [
-				"bzz-raw://e53738ecbcf1f5d851fe428c9173cc59fb7bf4ca0d55dbe049a9e671c915214f",
-				"dweb:/ipfs/QmRKyjfSpP22mnm5yG4vwyDMaTnmcwdRNcRiPZeqaodAx4"
+				"bzz-raw://b74777b7041ede3d7131429e2a7696c6f0466452deb97fd1f423857bcca5da85",
+				"dweb:/ipfs/QmQPzjqdVmzGkxURvSvmi8x9VtZg1UvjnbecJ449riENsy"
 			]
 		}
 	},
